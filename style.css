@@ -1,0 +1,87 @@
+ body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        .cat-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin-bottom: 30px;
+        }
+
+        .cat-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            filter: drop-shadow(0 0 15px rgba(255, 192, 203, 0.7));
+        }
+
+        .message {
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: center;
+            animation: colorChange 8s infinite;
+            text-shadow: 0 0 10px currentColor;
+            letter-spacing: 2px;
+        }
+
+        @keyframes colorChange {
+            0% { color: #ff69b4; } /* Rosa caliente */
+            25% { color: #9370db; } /* Púrpura medio */
+            50% { color: #00fa9a; } /* Verde menta */
+            75% { color: #ffa500; } /* Naranja */
+            100% { color: #ff69b4; } /* Rosa caliente */
+        }
+
+        .hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(255, 105, 180, 0.6);
+            transform: rotate(45deg);
+            animation: float 5s infinite ease-in-out;
+            opacity: 0;
+        }
+
+        .heart:before, .heart:after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background-color: inherit;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .heart:before {
+            top: -10px;
+            left: 0;
+        }
+
+        .heart:after {
+            top: 0;
+            left: -10px;
+        }
+
+        @keyframes float {
+            0% { transform: rotate(45deg) translateY(0) scale(0.5); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: rotate(45deg) translateY(-100px) scale(1.2); opacity: 0; }
+        }

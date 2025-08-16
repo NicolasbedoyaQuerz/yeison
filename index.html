@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="fotos/d25e9793973b1049283a43621e66b57a.png" type="image/x-icon">
+    <title>Hola Sara</title>
+</head>
+<body>
+    <div class="cat-container">
+        <img src="fotos/e14392b3bb9f745025a5cf6a9abe11be.gif" class="cat-image" alt="Gato negro mirando con ojos enamorados, corazones rosados saliendo de sus ojos, fondo negro con efecto bruma rosa">
+    </div>
+    
+    <h1 class="message">Me Encantas Sara</h1>
+
+    <div class="hearts">
+        <div class="heart" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="heart" style="left: 20%; animation-delay: 1s;"></div>
+        <div class="heart" style="left: 30%; animation-delay: 0.5s;"></div>
+        <div class="heart" style="left: 40%; animation-delay: 2s;"></div>
+        <div class="heart" style="left: 50%; animation-delay: 1.5s;"></div>
+        <div class="heart" style="left: 60%; animation-delay: 0.8s;"></div>
+        <div class="heart" style="left: 70%; animation-delay: 2.5s;"></div>
+        <div class="heart" style="left: 80%; animation-delay: 1.2s;"></div>
+        <div class="heart" style="left: 90%; animation-delay: 3s;"></div>
+    </div>
+
+    <script>
+        // Generar corazones dinámicos
+        setInterval(() => {
+            const hearts = document.querySelector('.hearts');
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDelay = Math.random() * 3 + 's';
+            hearts.appendChild(heart);
+            
+            // Eliminar después de la animación
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }, 300);
+    </script>
+</body>
+</html>
+
+```
+
